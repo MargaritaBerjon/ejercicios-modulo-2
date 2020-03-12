@@ -7,7 +7,7 @@ function getResult(ev) {
       paintHTML(data.login, data.avatar_url, data.public_repos);
     });
 }
-
+//Pinta en pantalla cada elemento que pido en los parámetros de arriba al sevidor. (data.login =name , data.avatar_url = src, data.public_repos = repositories)
 function paintHTML(name, src, repositories) {
   document.querySelector('.js-name').innerText = name;
   document.querySelector('.js-image').src = src;
