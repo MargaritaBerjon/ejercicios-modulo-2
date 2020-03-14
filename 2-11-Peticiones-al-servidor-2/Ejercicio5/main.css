@@ -1,9 +1,9 @@
-.light-text {
+.dark {
   color: wheat;
   background-color: darkcyan;
 }
 
-.dark-text {
+.light {
   color: darkslategray;
   background-color: aquamarine;
 }
