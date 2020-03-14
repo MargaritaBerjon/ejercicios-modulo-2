@@ -12,11 +12,15 @@ function getResult(ev) {
 }
 
 function paintResult(results) {
-  const ul = document.querySelector('ul');
-  for (const result of results) {
-    const li = document.createElement('li');
-    li.innerText = `Nombre: ${result.name}. Género: ${result.gender}`;
-    ul.appendChild(li);
+  if (results.length === 0) {
+    alert('Personaje no encontrado');
+  } else {
+    const ul = document.querySelector('ul');
+    for (const result of results) {
+      const li = document.createElement('li');
+      li.innerText = `Nombre: ${result.name}. Género: ${result.gender}`;
+      ul.appendChild(li);
+    }
   }
 }
 
