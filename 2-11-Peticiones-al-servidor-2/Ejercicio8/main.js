@@ -1,19 +1,18 @@
 'use strict';
-//NO ESTÁ TERMINADO. Preguntar cómo recuperar datos de localStorage y no hacer nueva petición.
-let results = '';
 
 function getResult(ev) {
-  if (JSON.parse(localStorage.getItem('results')) && localStorage.getItem('results').value) {
-    paintResult(results);
+  const inputCharacter = ev.target.parentElement.querySelector('#js-input-name').value;
+  const item = JSON.parse(localStorage.getItem(inputCharacter.toUpperCase()));
+  if (item) {
+    paintResult(item);
   } else {
-    const inputCharacter = ev.target.parentElement.querySelector('#js-input-name').value;
     fetch(`https://swapi.co/api/people/?search=${inputCharacter}`)
       .then(response => response.json())
       .then(data => {
         data.results;
-        results = data.results;
+        const results = data.results;
         paintResult(results);
-        localStorage.setItem('results', JSON.stringify(results));
+        localStorage.setItem(inputCharacter.toUpperCase(), JSON.stringify(results));
       });
   }
 }
