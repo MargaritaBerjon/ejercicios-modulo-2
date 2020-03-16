@@ -2,6 +2,8 @@
 
 function getResult(ev) {
   const inputCharacter = ev.target.parentElement.querySelector('#js-input-name').value;
+  console.log(inputCharacter);
+
   const item = JSON.parse(localStorage.getItem(inputCharacter.toUpperCase()));
   if (item) {
     paintResult(item);
