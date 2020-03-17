@@ -9,8 +9,10 @@ function writePunish() {
 
     createParagraph.appendChild(addContent);
     blackboard.appendChild(createParagraph);
+
     let createSelect = document.createElement('select');
     createSelect.id = i;
+
     blackboard.appendChild(createSelect);
 
     let colorName = ['blanco', 'azul', 'rojo', 'verde', 'amarillo', 'rosa'];
